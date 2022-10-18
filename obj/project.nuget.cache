@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "A7oIL0YTlhT6fV5X+fuYbHOE0JTGnDxCbddgRvb2rx8QC8cTkcVEVadw00DVtawBbcCK16KVGSR6vtn4ejZpYQ==",
+  "dgSpecHash": "sMNX1M9IJ2tYjBuCOv/fEx/s5AEI2c8kh9tIUVLvAkLXjfg0e4S0PkaNpKbb3x0VRVJs4VDO9vbUL6d2o3YefQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hz.Ord.Prof.Dr.Deniz\\Desktop\\Web Uygulamalar\\_Portfolio\\E-Shelf_WebUI\\E-Shelf_WebUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Hz.Ord.Prof.Dr.Deniz\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -31,3 +31,4 @@ C:\Users\Hz.Ord.Prof.Dr.Deniz\Desktop\Web Uygulamalar\_Portfolio\E-Shelf_WebUI\o
 C:\Users\Hz.Ord.Prof.Dr.Deniz\Desktop\Web Uygulamalar\_Portfolio\E-Shelf_WebUI\obj\Debug\net5.0\E-Shelf_WebUI.RazorTargetAssemblyInfo.cs
 C:\Users\Hz.Ord.Prof.Dr.Deniz\Desktop\Web Uygulamalar\_Portfolio\E-Shelf_WebUI\obj\Debug\net5.0\E-Shelf_WebUI.Views.pdb
 C:\Users\Hz.Ord.Prof.Dr.Deniz\Desktop\Web Uygulamalar\_Portfolio\E-Shelf_WebUI\obj\Debug\net5.0\E-Shelf_WebUI.csproj.CopyComplete
+C:\Users\Hz.Ord.Prof.Dr.Deniz\Desktop\Web Uygulamalar\_Portfolio\E-Shelf_WebUI\bin\Debug\net5.0\Newtonsoft.Json.dll

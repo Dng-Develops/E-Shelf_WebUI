@@ -1,4 +1,7 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@using E_Shelf_WebUI.ResponseModel
+@model List<ProductResponseModel>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>E Shelf WebApi Consume</title>
 </head>
@@ -6,8 +9,21 @@
     <p>
         UI Layer Working..
     </p>
-    <p>
-        @ViewBag.ResponseMessage
-    </p>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Stock</td>
+            </tr>
+        }
+    </table>
 </body>
 </html>

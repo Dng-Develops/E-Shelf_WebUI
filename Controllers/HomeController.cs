@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using E_Shelf_WebUI.ResponseModel;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -20,13 +23,15 @@ namespace E_Shelf_WebUI.Controllers
 
             if (responseMessage.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                ViewBag.ResponseMessage = "Success";
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<List<ProductResponseModel>>(jsonData);
+                return View(result);
             }
             else
             {
-                ViewBag.ResponseMessage = "Failed";
+                return View(null);
             }
-            return View();
+            
         }
     }
 }
