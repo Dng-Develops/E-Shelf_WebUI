@@ -54,10 +54,49 @@ namespace E_Shelf_WebUI.Controllers
             else
             {
                 TempData["errorMesage"] = $"Error occured ! error code : {(int)responseMessage.StatusCode} ";
-            return View(model);
+                return View(model);
             }
 
         }
 
+        public async Task<IActionResult> Update(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:5000/api/products/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var data = JsonConvert.DeserializeObject<ProductResponseModel>(jsonData);
+                return View(data);
+            }
+            else
+            {
+                return View(null);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(ProductResponseModel model)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(model);
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PutAsync("http://localhost:5000/api/products", content);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            await client.DeleteAsync($"http://localhost:5000/api/products/{id}");
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -1,0 +1,42 @@
+﻿@using E_Shelf_WebUI.ResponseModel
+@model ProductResponseModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>E Shelf WebApi Consume Update</title>
+</head>
+<body>
+
+    @{
+        if (TempData["errorMesage"] != null)
+        {
+            <h4 style="color: red">@TempData["errorMesage"]?.ToString()</h4>
+            <br />
+        }
+    }
+
+    <br />
+    <h1>Update Product</h1>
+    <br />
+    <form asp-action="update" asp-controller="home" method="post">
+        <label asp-for="@Model.Name">Product Name:</label>
+        <input type="text" asp-for="@Model.Name" />
+        <br />
+        <hr />
+        <label asp-for="@Model.Name">Product Price:</label>
+        <input asp-for="@Model.Price" />
+        <br />
+        <hr />
+        <label asp-for="@Model.Name">Product Stock:</label>
+        <input asp-for="@Model.Stock" />
+        <input type="hidden" asp-for="@Model.Id"/>
+        <br />
+        <hr />
+        <div>
+            <button type="submit">Submit</button>
+            <br />
+            <a asp-controller="Home" asp-action="Index">Back To Product List</a>
+        </div>
+    </form>
+</body>
+</html>
